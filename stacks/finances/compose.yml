@@ -1,9 +1,9 @@
 services:
   finances:
     build:
-      context: https://github.com/jgoedde/Finances.git#v1.13.1
+      context: https://github.com/jgoedde/Finances.git#${FINANCES_VERSION}
       dockerfile: Dockerfile
-    image: finances-client:latest
+    image: finances-client:${FINANCES_VERSION}
     ports:
       - "8787:80"
     restart: unless-stopped
