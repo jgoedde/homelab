@@ -2,7 +2,7 @@
 
 _Please don't stop the music 🎵_
 
-TODO: add visualization of how music flow works.
+![Music download flow](images/music-dl-flow.png)
 
 ## Contents
 
