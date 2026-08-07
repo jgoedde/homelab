@@ -13,8 +13,8 @@ services:
       - /home/julian/Music/library:/music-library
       - /home/julian/Documents/finanzen:/finanzen
     ports:
-      - 8384:8384
-      - 22000:22000/tcp
-      - 22000:22000/udp
-      - 21027:21027/udp
+      - "127.0.0.1:8384:8384"
+      - "22000:22000/tcp"
+      - "22000:22000/udp"
+      - "21027:21027/udp"
     restart: unless-stopped
