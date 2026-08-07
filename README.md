@@ -9,6 +9,7 @@ My personal Infra hosting some l33t services.
   * [Contents](#contents)
   * [Services & Technologies used](#services--technologies-used)
   * [Music Management](#music-management)
+  * [Roadmap](#roadmap)
 <!-- TOC -->
 
 ## Services & Technologies used
@@ -27,3 +28,11 @@ Started building my own personal music library, getting off Streaming Services e
 Built a nice automation (imo) to get YouTube Rips - See [music/README](music/README.md)
 
 Using [beets](https://beets.io/) to manage the library, auto tag, audio fingerprinting and importing said YT rips.
+
+## Roadmap
+
+- [X] Move stacks to Version Control (here we are)
+- [ ] Music: Get better quality audios
+- [ ] Add automated backups
+- [ ] Add dashboard
+- [ ] Add alerting
