@@ -2,7 +2,7 @@
 
 _Please don't stop the music 🎵_
 
-![Music download flow](images/music-dl-flow.png)
+![Music download flow](../images/music-dl-flow.png)
 
 ## Contents
 
