@@ -1,5 +1,5 @@
 services:
-  finances-web:
+  finances:
     build:
       context: https://github.com/jgoedde/Finances.git#v1.13.1
       dockerfile: Dockerfile
