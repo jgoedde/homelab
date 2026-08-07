@@ -1,3 +1,6 @@
 .idea/
 **/.env
 !**/.env.example
+
+stacks/karakeep/backup/karakeep-backup.json
+stacks/paperless-ngx/backup/tmp
