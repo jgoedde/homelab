@@ -1,7 +1,24 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/settings/
+title: Homelab
+theme: dark
+color: slate
 
-providers:
-  openweathermap: openweathermapapikey
-  weatherapi: weatherapiapikey
+layout:
+  Photos:
+    style: row
+    columns: 4
+  Music:
+    style: row
+    columns: 2
+  Bookmarks:
+    style: row
+    columns: 4
+  Documents:
+    style: row
+    columns: 4
+  Sync:
+    style: row
+    columns: 3
+  Utilities:
+    style: row
+    columns: 3
+

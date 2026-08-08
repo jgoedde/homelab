@@ -30,6 +30,47 @@
         widget:
           type: docker
           container: immich_redis
+          
+- Music:
+    - Beets Library:
+        icon: mdi-music-box-multiple
+        description: Library stats
+        widget:
+          type: customapi
+          url: http://music-stats:8080/beets-stats.json
+          mappings:
+            - field: tracks
+              label: Tracks
+              format: number
+            - field: artists
+              label: Artists
+              format: number
+            - field: albums
+              label: Albums
+              format: number
+            - field: totalSize
+              label: Size
+    - Import Job:
+        icon: mdi-clock-sync-outline
+        description: MeTube → Beets, every 3 min
+        widget:
+          type: customapi
+          url: http://music-stats:8080/cron-status.json
+          mappings:
+            - field: status
+              label: Last Status
+            - field: lastRun
+              label: Ran At
+            - field: imported
+              label: Imported
+              format: number
+    - Metube:
+        icon: metube.png
+        href: http://localhost:8081
+        description: yt-dlp download UI
+        widget:
+          type: docker
+          container: metube
 
 - Bookmarks:
     - Karakeep:
@@ -107,13 +148,6 @@
         widget:
           type: docker
           container: finances-finances-1
-    - Metube:
-        icon: metube.png
-        href: http://localhost:8081
-        description: yt-dlp download UI
-        widget:
-          type: docker
-          container: metube
     - Homepage:
         icon: homepage.png
         href: http://localhost:9595
