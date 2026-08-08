@@ -2,17 +2,47 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 
-- My First Group:
-    - My First Service:
-        href: http://localhost/
-        description: Homepage is awesome
+- Stacks:
+    - Homepage:
+        href: http://localhost:9595
+        description: Homepage dashboard
+        widget:
+          type: docker
+          container: homepage
+    - Syncthing:
+        href: http://127.0.0.1:8384
+        description: Syncthing web UI
+        widget:
+          type: docker
+          container: syncthing
+    - Immich:
+        href: http://localhost:2283
+        description: Immich photo server
+        widget:
+          type: docker
+          container: immich_server
+    - Karakeep:
+        href: http://localhost:3030
+        description: Karakeep web app
+        widget:
+          type: docker
+          container: karakeep-web-1
+    - Finances:
+        href: http://localhost:8787
+        description: Finances client
+        widget:
+          type: docker
+          container: finances-finances-1
+    - Paperless:
+        href: http://localhost:8010
+        description: Paperless NGX document UI
+        widget:
+          type: docker
+          container: paperless-ngx-webserver-1
+    - Metube:
+        href: http://localhost:8081
+        description: Metube downloader UI
+        widget:
+          type: docker
+          container: metube
 
-- My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
-
-- My Third Group:
-    - My Third Service:
-        href: http://localhost/
-        description: Homepage is 😎

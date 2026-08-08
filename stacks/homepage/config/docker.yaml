@@ -1,10 +1,11 @@
 ---
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/docker/
+# Docker widget configuration
+# Shows container status, health, uptime, created date
 
-# my-docker:
-#   host: 127.0.0.1
-#   port: 2375
+- Overview:
+    - Docker:
+        widget:
+          type: docker
+        style: row
+        columns: 4
 
-# my-docker:
-#   socket: /var/run/docker.sock
