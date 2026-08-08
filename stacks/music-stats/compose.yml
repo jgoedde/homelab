@@ -9,4 +9,4 @@ services:
     volumes:
       - /home/julian/Music/stats:/web:ro
     ports:
-      - "8091:8080"
+      - "127.0.0.1:8091:8080"
