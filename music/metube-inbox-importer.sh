@@ -93,6 +93,7 @@ for entry in "$INBOX"/*; do
         log "Importing album: $base"
         if "$BEET" import -q "$entry"; then
             log "✓ Album imported"
+            rm -rf "$entry"  # Delete the directory after successful import
             ((IMPORTED++))
         else
             log "✗ Album import failed"
