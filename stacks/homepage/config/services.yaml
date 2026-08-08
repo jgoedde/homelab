@@ -108,7 +108,7 @@
           type: paperlessngx
           url: http://paperless-ngx-webserver-1:8000
           key: "{{HOMEPAGE_VAR_PAPERLESS_KEY}}"
-          fields: ["total", "inbox"]
+          fields: ["total"]
     - Paperless DB:
         icon: postgres.png
         description: Document & OCR metadata
