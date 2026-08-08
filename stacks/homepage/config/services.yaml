@@ -55,7 +55,7 @@
             - field: totalSize
               label: Size
     - Import Job:
-        icon: mdi-clock-sync-outline
+        icon: mdi-repeat-variant
         description: MeTube → Beets, every 3 min
         widget:
           type: customapi
