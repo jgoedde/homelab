@@ -1,0 +1,12 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "9595:3000"
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: "gethomepage.dev,localhost:9595,127.0.0.1:9595"
+    restart: unless-stopped
