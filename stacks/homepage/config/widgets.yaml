@@ -7,4 +7,11 @@
     memory: true
     disk: /
     uptime: true
+- datetime:
+    text_size: xl
+    # 4 januari 2023 om 13:51:25 PST
+    locale: de
+    format:
+      dateStyle: long
+      timeStyle: long
 
