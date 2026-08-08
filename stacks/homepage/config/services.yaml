@@ -1,11 +1,12 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
-
 - Photos:
     - Immich:
+        id: immich-server
         icon: immich.png
         href: http://localhost:2283
+        siteMonitor: http://immich_server:2283
         description: Photo & video library
         widget:
           type: immich
@@ -13,24 +14,27 @@
           key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
           version: 2
     - Immich Postgres:
+        id: immich-postgres
         icon: postgres.png
         description: Metadata & search index DB
         widget:
           type: docker
           container: immich_postgres
     - Immich Machine Learning:
+        id: immich-ml
         icon: immich.png
         description: Face & object recognition
         widget:
           type: docker
           container: immich_machine_learning
     - Immich Redis:
+        id: immich-redis
         icon: redis.png
         description: Job queue cache
         widget:
           type: docker
           container: immich_redis
-          
+
 - Music:
     - Beets Library:
         icon: mdi-music-box-multiple
@@ -67,6 +71,7 @@
     - Metube:
         icon: metube.png
         href: http://localhost:8081
+        siteMonitor: http://metube:8081
         description: yt-dlp download UI
         widget:
           type: docker
@@ -76,6 +81,7 @@
     - Karakeep:
         icon: karakeep.png
         href: http://localhost:3030
+        siteMonitor: http://karakeep-web-1:3000
         description: Bookmark manager
         widget:
           type: karakeep
@@ -99,6 +105,7 @@
     - Paperless-ngx:
         icon: paperless-ngx.png
         href: http://localhost:8010
+        siteMonitor: http://paperless-ngx-webserver-1:8000
         description: Document management
         widget:
           type: paperlessngx
@@ -122,6 +129,7 @@
     - Syncthing:
         icon: syncthing.png
         href: http://127.0.0.1:8384
+        siteMonitor: http://syncthing:8384
         description: File sync
         widget:
           type: customapi

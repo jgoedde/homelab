@@ -1,6 +1,7 @@
 title: Homelab
 theme: dark
 color: slate
+statusStyle: dot
 
 layout:
   Photos:
@@ -8,7 +9,7 @@ layout:
     columns: 4
   Music:
     style: row
-    columns: 2
+    columns: 3
   Bookmarks:
     style: row
     columns: 4

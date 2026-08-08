@@ -2,10 +2,3 @@
 # Docker widget configuration
 # Shows container status, health, uptime, created date
 
-- Overview:
-    - Docker:
-        widget:
-          type: docker
-        style: row
-        columns: 4
-
