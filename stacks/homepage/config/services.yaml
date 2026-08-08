@@ -2,47 +2,122 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 
-- Stacks:
-    - Homepage:
-        href: http://localhost:9595
-        description: Homepage dashboard
-        widget:
-          type: docker
-          container: homepage
-    - Syncthing:
-        href: http://127.0.0.1:8384
-        description: Syncthing web UI
-        widget:
-          type: docker
-          container: syncthing
+- Photos:
     - Immich:
+        icon: immich.png
         href: http://localhost:2283
-        description: Immich photo server
+        description: Photo & video library
+        widget:
+          type: immich
+          url: http://immich_server:2283
+          key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
+          version: 2
+    - Immich Postgres:
+        icon: postgres.png
+        description: Metadata & search index DB
         widget:
           type: docker
-          container: immich_server
+          container: immich_postgres
+    - Immich Machine Learning:
+        icon: immich.png
+        description: Face & object recognition
+        widget:
+          type: docker
+          container: immich_machine_learning
+    - Immich Redis:
+        icon: redis.png
+        description: Job queue cache
+        widget:
+          type: docker
+          container: immich_redis
+
+- Bookmarks:
     - Karakeep:
+        icon: karakeep.png
         href: http://localhost:3030
-        description: Karakeep web app
+        description: Bookmark manager
+        widget:
+          type: karakeep
+          url: http://karakeep-web-1:3000
+          key: "{{HOMEPAGE_VAR_KARAKEEP_KEY}}"
+          fields: ["bookmarks", "highlights", "lists", "tags"]
+    - Karakeep Meilisearch:
+        icon: meilisearch.png
+        description: Bookmark search index
         widget:
           type: docker
-          container: karakeep-web-1
+          container: karakeep-meilisearch-1
+    - Karakeep Chrome:
+        icon: googlechrome.png
+        description: Headless crawler
+        widget:
+          type: docker
+          container: karakeep-chrome-1
+
+- Documents:
+    - Paperless-ngx:
+        icon: paperless-ngx.png
+        href: http://localhost:8010
+        description: Document management
+        widget:
+          type: paperlessngx
+          url: http://paperless-ngx-webserver-1:8000
+          key: "{{HOMEPAGE_VAR_PAPERLESS_KEY}}"
+          fields: ["total", "inbox"]
+    - Paperless DB:
+        icon: postgres.png
+        description: Document & OCR metadata
+        widget:
+          type: docker
+          container: paperless-ngx-db-1
+    - Paperless Broker:
+        icon: redis.png
+        description: Task queue
+        widget:
+          type: docker
+          container: paperless-ngx-broker-1
+
+- Sync:
+    - Syncthing:
+        icon: syncthing.png
+        href: http://127.0.0.1:8384
+        description: File sync
+        widget:
+          type: customapi
+          url: http://syncthing:8384/rest/svc/report
+          headers:
+            X-API-Key: "{{HOMEPAGE_VAR_SYNCTHING_KEY}}"
+          mappings:
+            - field: totMiB
+              label: Stored
+              format: number
+              suffix: " MB"
+            - field: numFolders
+              label: Folders
+              format: number
+            - field: numFiles
+              label: Files
+              format: number
+
+- Utilities:
     - Finances:
+        icon: mdi-cash-multiple
         href: http://localhost:8787
-        description: Finances client
+        description: Personal finance tracker
         widget:
           type: docker
           container: finances-finances-1
-    - Paperless:
-        href: http://localhost:8010
-        description: Paperless NGX document UI
-        widget:
-          type: docker
-          container: paperless-ngx-webserver-1
     - Metube:
+        icon: metube.png
         href: http://localhost:8081
-        description: Metube downloader UI
+        description: yt-dlp download UI
         widget:
           type: docker
           container: metube
-
+    - Homepage:
+        icon: homepage.png
+        href: http://localhost:9595
+        description: This dashboard
+        widget:
+          type: docker
+          container: homepage

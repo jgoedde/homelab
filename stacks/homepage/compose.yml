@@ -9,4 +9,29 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
     environment:
       HOMEPAGE_ALLOWED_HOSTS: "gethomepage.dev,localhost:9595,127.0.0.1:9595"
+    env_file:
+      - .env
     restart: unless-stopped
+    networks:
+      - default
+      - immich_default
+      - karakeep_default
+      - paperless-ngx_default
+      - syncthing_default
+      - finances_default
+      - metube_default
+
+networks:
+  default: { }
+  immich_default:
+    external: true
+  karakeep_default:
+    external: true
+  paperless-ngx_default:
+    external: true
+  syncthing_default:
+    external: true
+  finances_default:
+    external: true
+  metube_default:
+    external: true
