@@ -1,0 +1,12 @@
+services:
+  music-stats:
+    image: halverneus/static-file-server:latest
+    container_name: music-stats
+    restart: unless-stopped
+    environment:
+      FOLDER: /web
+      CORS: "true"
+    volumes:
+      - /home/julian/Music/stats:/web:ro
+    ports:
+      - "8091:8080"
