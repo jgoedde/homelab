@@ -160,3 +160,12 @@
         widget:
           type: docker
           container: homepage
+    - Fritz:
+        icon: mdi-wifi
+        href: http://fritz.box
+        description: FRITZ!Box Informationen
+        widget:
+          type: fritzbox
+          url: http://fritz.box
+          fields: ["connectionStatus","uptime","received","sent"]
+
