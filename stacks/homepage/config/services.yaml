@@ -3,7 +3,6 @@
 # https://gethomepage.dev/configs/services/
 - Photos:
     - Immich:
-        id: immich-server
         icon: immich.png
         href: http://localhost:2283
         siteMonitor: http://immich_server:2283
@@ -14,21 +13,18 @@
           key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
           version: 2
     - Immich Postgres:
-        id: immich-postgres
         icon: postgres.png
         description: Metadata & search index DB
         widget:
           type: docker
           container: immich_postgres
     - Immich Machine Learning:
-        id: immich-ml
         icon: immich.png
         description: Face & object recognition
         widget:
           type: docker
           container: immich_machine_learning
     - Immich Redis:
-        id: immich-redis
         icon: redis.png
         description: Job queue cache
         widget:
