@@ -12,6 +12,7 @@
           url: http://immich_server:2283
           key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
           version: 2
+          fields: ["photos", "videos", "storage"]
     - Immich Postgres:
         icon: postgres.png
         description: Metadata & search index DB
