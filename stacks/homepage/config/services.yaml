@@ -4,7 +4,7 @@
 - Photos:
     - Immich:
         icon: immich.png
-        href: http://localhost:2283
+        href: http://hub.fritz.box:2283
         siteMonitor: http://immich_server:2283
         description: Photo & video library
         widget:
@@ -66,7 +66,7 @@
               format: number
     - Metube:
         icon: metube.png
-        href: http://localhost:8081
+        href: http://hub.fritz.box:8081
         siteMonitor: http://metube:8081
         description: yt-dlp download UI
         widget:
@@ -76,7 +76,7 @@
 - Bookmarks:
     - Karakeep:
         icon: karakeep.png
-        href: http://localhost:3030
+        href: http://hub.fritz.box:3030
         siteMonitor: http://karakeep-web-1:3000
         description: Bookmark manager
         widget:
@@ -100,7 +100,7 @@
 - Documents:
     - Paperless-ngx:
         icon: paperless-ngx.png
-        href: http://localhost:8010
+        href: http://hub.fritz.box:8010
         siteMonitor: http://paperless-ngx-webserver-1:8000
         description: Document management
         widget:
@@ -124,7 +124,7 @@
 - Sync:
     - Syncthing:
         icon: syncthing.png
-        href: http://127.0.0.1:8384
+        href: http://hub.fritz.box:8384
         siteMonitor: http://syncthing:8384
         description: File sync
         widget:
@@ -147,14 +147,14 @@
 - Utilities:
     - Finances:
         icon: mdi-cash-multiple
-        href: http://localhost:8787
+        href: http://hub.fritz.box:8787
         description: Personal finance tracker
         widget:
           type: docker
           container: finances-finances-1
     - Homepage:
         icon: homepage.png
-        href: http://localhost:9595
+        href: http://hub.fritz.box:9595
         description: This dashboard
         widget:
           type: docker
