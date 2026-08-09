@@ -167,5 +167,4 @@
         widget:
           type: fritzbox
           url: http://fritz.box
-          fields: ["connectionStatus","uptime","received","sent"]
-
+          fields: ["connectionStatus", "uptime", "received", "sent"]
