@@ -24,6 +24,8 @@ as an isolated Docker Compose stack, version-controlled here.
   across stacks unless explicitly connected. `homepage` is the one exception, deliberately attached to every stack's
   network since it needs visibility into all of them
 
+![Architecture Overview](images/arch-overview.png)
+
 ## Services & Technologies used
 
 - Docker (Compose)
