@@ -2,3 +2,26 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
 
+- Links:
+    - Github:
+        - icon: github.png
+          description: "Homelab GitHub Repository"
+          href: https://github.com/jgoedde/homelabm
+    - MDI:
+        - icon: mdi-list-box
+          description: "Material Design Icons"
+          href: https://pictogrammers.com/library/mdi/
+
+- FRITZ:
+    - Admin:
+        - icon: fritzbox.png
+          description: "FritzBox Router"
+          href: http://fritz.box
+    - DNS:
+        - href: http://fritz.box/#/internet/dns
+          description: "DNS settings"
+          icon: mdi-dns
+    - WireGuard:
+        - href: http://fritz.box/#/access/wireguard
+          description: "WireGuard VPN devices"
+          icon: mdi-key
