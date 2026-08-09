@@ -1,0 +1,6 @@
+{
+  "postprocessors": [
+    { "key": "SponsorBlock", "categories": ["music_offtopic"] },
+    { "key": "ModifyChapters", "remove_sponsor_segments": ["music_offtopic"] }
+  ]
+}
