@@ -6,7 +6,7 @@
     - Github:
         - icon: github.png
           description: "Homelab GitHub Repository"
-          href: https://github.com/jgoedde/homelabm
+          href: https://github.com/jgoedde/homelab
     - MDI:
         - icon: mdi-list-box
           description: "Material Design Icons"
