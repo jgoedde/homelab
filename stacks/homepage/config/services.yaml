@@ -84,7 +84,7 @@
           type: karakeep
           url: http://karakeep-web-1:3000
           key: "{{HOMEPAGE_VAR_KARAKEEP_KEY}}"
-          fields: ["bookmarks", "highlights", "lists", "tags"]
+          fields: ["bookmarks", "favorites", "tags"]
     - Karakeep Meilisearch:
         icon: meilisearch.png
         description: Bookmark search index
