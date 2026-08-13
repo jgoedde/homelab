@@ -4,7 +4,7 @@ set -euo pipefail
 INBOX="$HOME/Music/inbox-metube"
 STATS_DIR="$HOME/Music/stats"
 STABLE_SECONDS=60   # Datei/Ordner muss seit N Sekunden unverändert sein
-BEET="/home/julian/.local/bin/beet"
+BEET="$HOME/.local/bin/beet"
 
 mkdir -p "$STATS_DIR"
 
