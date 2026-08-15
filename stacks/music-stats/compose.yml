@@ -1,6 +1,6 @@
 services:
   music-stats:
-    image: halverneus/static-file-server:latest
+    image: halverneus/static-file-server:1.8.12
     container_name: music-stats
     restart: unless-stopped
     environment:
