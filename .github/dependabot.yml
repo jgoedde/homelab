@@ -2,6 +2,9 @@ version: 2
 
 updates:
   - package-ecosystem: "docker-compose"
-    directory: "/"
+    directories:
+      - "/stacks/*"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
