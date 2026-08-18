@@ -20,7 +20,6 @@ services:
       - syncthing_default
       - finances_default
       - metube_default
-      - music-stats_default
 
 networks:
   default: { }
@@ -35,6 +34,4 @@ networks:
   finances_default:
     external: true
   metube_default:
-    external: true
-  music-stats_default:
     external: true

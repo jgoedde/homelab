@@ -6,13 +6,15 @@ as an isolated Docker Compose stack, version-controlled here.
 ## Contents
 
 <!-- TOC -->
-  * [My Homelab setup](#my-homelab-setup)
-  * [Contents](#contents)
-  * [Architecture](#architecture)
-  * [Services & Technologies used](#services--technologies-used)
-  * [Music Management](#music-management)
-  * [Backups](#backups)
-  * [Roadmap](#roadmap)
+
+* [My Homelab setup](#my-homelab-setup)
+* [Contents](#contents)
+* [Architecture](#architecture)
+* [Services & Technologies used](#services--technologies-used)
+* [Music Management](#music-management)
+* [Backups](#backups)
+* [Roadmap](#roadmap)
+
 <!-- TOC -->
 
 ## Architecture
@@ -42,8 +44,7 @@ as an isolated Docker Compose stack, version-controlled here.
 
 Started building my own personal music library, getting off streaming services. Built a nice automation (imo) to get
 YouTube Rips - See [music/README](music/README.md). Using [beets](https://beets.io/) to manage the library: auto tag,
-audio fingerprinting, and importing YT rips dropped by MeTube. Import job status and library stats are surfaced on the
-dashboard via a small stats file MeTube's cron writes on every run.
+audio fingerprinting, and importing YT rips dropped by MeTube.
 
 ## Backups
 
