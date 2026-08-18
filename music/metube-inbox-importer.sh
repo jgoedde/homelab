@@ -46,9 +46,8 @@ for entry in "$INBOX"/*; do
             continue
         fi
         log "Importing album: $base"
-        if "$BEET" import -q "$entry"; then
+        if "$BEET" import "$entry" --quiet --quiet-fallback=asis --from-scratch; then
             log "✓ Album imported"
-            rm -rf "$entry"  # Delete the directory after successful import
         else
             log "✗ Album import failed"
         fi
