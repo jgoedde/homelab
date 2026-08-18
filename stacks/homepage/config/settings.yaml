@@ -9,7 +9,7 @@ layout:
     columns: 4
   Music:
     style: row
-    columns: 3
+    columns: 4
   Bookmarks:
     style: row
     columns: 4
@@ -18,7 +18,7 @@ layout:
     columns: 4
   Sync:
     style: row
-    columns: 3
+    columns: 4
   Utilities:
     style: row
-    columns: 3
+    columns: 2
