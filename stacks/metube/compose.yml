@@ -8,5 +8,6 @@ services:
     volumes:
       - /home/julian/Music/inbox-metube:/downloads
       - ./yt-dlp-options.json:/app/yt-dlp-options.json
+      - ./yt-dlp-presets.json:/app/yt-dlp-presets.json
     env_file:
       - .env
