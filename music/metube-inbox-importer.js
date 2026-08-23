@@ -1,41 +1,6 @@
 #!/usr/bin/env node
 'use strict';
 
-/**
- * metube-beet-import.js
- *
- * Cron replacement for the bash "is it stable yet?" heuristic. Instead of
- * guessing completeness from file mtimes, this reads MeTube's own state
- * files directly:
- *
- *   <STATE_DIR>/queue.json     - downloads currently active or queued
- *   <STATE_DIR>/pending.json   - downloads added but not yet auto-started
- *   <STATE_DIR>/completed.json - downloads MeTube itself considers finished
- *
- * Design notes / trade-offs (read before relying on this):
- *
- * - "In-flight" gate is GLOBAL, not per-folder: if queue.json or pending.json
- *   contains ANY item, the whole run is skipped. With MAX_CONCURRENT_DOWNLOADS=1
- *   this is equivalent to a per-album check in practice (a playlist's tracks
- *   all land in queue.json immediately, so an album folder can't look
- *   "complete" while later tracks are still queued behind it). If you ever
- *   raise MAX_CONCURRENT_DOWNLOADS, this becomes more conservative than
- *   strictly necessary (it'll delay importing an already-finished, unrelated
- *   album while something else is mid-download) but never incorrect.
- *
- * - Every completed item's "filename" (relative to the download dir) tells
- *   you whether it's a playlist/album track (has a directory component) or
- *   a standalone singleton (bare filename). No output-template guessing
- *   needed.
- *
- * - Already-imported items are tracked by MeTube's own per-download "key"
- *   (the source URL) in a small local JSON file, since beets `move: yes`
- *   removes the source files from the inbox after import - so we can't use
- *   "is the file still there" to know what's been handled.
- *
- * - Requires nothing beyond Node's stdlib - no npm install needed.
- */
-
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
