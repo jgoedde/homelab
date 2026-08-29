@@ -56,6 +56,7 @@ for automating this.
 
 - [X] Move stacks to Version Control (here we are)
 - [X] Add dashboard
+- [X] [Add automatic redeploy (#2)](https://github.com/jgoedde/homelab/issues/2)
 - [ ] Music: Get better quality audios
 - [ ] Automate backups (currently manual, cold-storage SSD)
 - [ ] Add alerting
