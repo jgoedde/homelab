@@ -1,9 +1,6 @@
 services:
   finances:
-    build:
-      context: https://github.com/jgoedde/Finances.git#${FINANCES_VERSION}
-      dockerfile: Dockerfile
-    image: finances-client:${FINANCES_VERSION}
+    image: ghcr.io/jgoedde/finances:1.14.3
     restart: unless-stopped
     networks:
       - proxy
