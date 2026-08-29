@@ -2,18 +2,15 @@
 set -euo pipefail
 
 REPO_DIR="/home/julian/Desktop/homelab"
-LOG_FILE="/var/log/homelab-redeploy.log"
 
 log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG_FILE"
+    printf '[%s] %s\n' "$(date '+%F %T')" "$*"
 }
 
 cd "$REPO_DIR"
 
 OLD_HEAD=$(git rev-parse HEAD)
-
-git fetch origin main >> "$LOG_FILE" 2>&1
-
+git fetch origin main
 NEW_HEAD=$(git rev-parse origin/main)
 
 if [ "$OLD_HEAD" = "$NEW_HEAD" ]; then
@@ -22,7 +19,7 @@ fi
 
 log "Change detected: $OLD_HEAD -> $NEW_HEAD"
 
-git merge --ff-only origin/main >> "$LOG_FILE" 2>&1
+git merge --ff-only origin/main
 
 # Only redeploy stacks whose files actually changed
 CHANGED_STACKS=$(git diff --name-only "$OLD_HEAD" "$NEW_HEAD" -- stacks/ \
@@ -41,7 +38,7 @@ for stack in $CHANGED_STACKS; do
             cd "$STACK_DIR"
             docker compose pull
             docker compose up -d
-        ) >> "$LOG_FILE" 2>&1 || log "FAILED: $stack"
+        ) || log "FAILED: $stack"
     fi
 done
 
