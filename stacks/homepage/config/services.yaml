@@ -44,7 +44,7 @@
 
 - Bookmarks:
     - Karakeep:
-        icon: karakeep.png
+        icon: sh-karakeep
         href: http://hub.fritz.box:3030
         siteMonitor: http://karakeep-web-1:3000
         description: Bookmark manager
@@ -60,7 +60,7 @@
           type: docker
           container: karakeep-meilisearch-1
     - Karakeep Chrome:
-        icon: googlechrome.png
+        icon: sh-google-chrome
         description: Headless crawler
         widget:
           type: docker
