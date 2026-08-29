@@ -89,6 +89,15 @@
         widget:
           type: docker
           container: paperless-ngx-broker-1
+- Money:
+    - Finances:
+        icon: mdi-cash-multiple
+        href: https://hub.fritz.box:8787
+        siteMonitor: http://finances:8787
+        description: Personal finance tracker
+        widget:
+          type: docker
+          container: finances-finances-1
 
 - Sync:
     - Syncthing:
@@ -114,13 +123,6 @@
               format: number
 
 - Utilities:
-    - Finances:
-        icon: mdi-cash-multiple
-        href: http://hub.fritz.box:8787
-        description: Personal finance tracker
-        widget:
-          type: docker
-          container: finances-finances-1
     - Homepage:
         icon: homepage.png
         href: http://hub.fritz.box:9595
