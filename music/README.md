@@ -16,6 +16,6 @@ _Please don't stop the music 🎵_
 
 Edit crontab to run every x minutes. (See [`crontab`](https://github.com/jgoedde/homelab/blob/main/music/crontab))
 
-    ```shell
-    crontab -e
-    ```
+```bash
+crontab -e
+```
