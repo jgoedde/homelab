@@ -6,7 +6,7 @@ services:
       TZ: "Europe/Berlin"
     ports:
       - '80:80'
-      - '81:81' # admin UI
+      - '127.0.0.1:81:81' # admin UI
       - '443:443'
       - '8787:443' # finances client
     volumes:
