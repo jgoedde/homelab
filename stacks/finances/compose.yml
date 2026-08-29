@@ -3,8 +3,8 @@ services:
     image: ghcr.io/jgoedde/finances:1.14.3
     restart: unless-stopped
     networks:
-      - proxy
+      - npm-proxy
 
 networks:
-  proxy:
+  npm-proxy:
     external: true

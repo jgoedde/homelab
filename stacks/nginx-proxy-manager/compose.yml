@@ -13,8 +13,8 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     networks:
-      - proxy
+      - npm-proxy
 
 networks:
-  proxy:
+  npm-proxy:
     external: true
