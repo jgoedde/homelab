@@ -1,1 +1,1 @@
-*/3 * * * * (/home/julian/bin/metube-inbox-importer.sh && /home/julian/bin/update-yt-genres.sh) >> /home/julian/beets-watcher.log 2>&1
+*/3 * * * * (/home/julian/bin/metube-inbox-importer.sh && /home/julian/bin/update-yt-genres.sh) >> /var/log/beets-watcher.log 2>&1
