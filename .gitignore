@@ -6,3 +6,5 @@ stacks/karakeep/backup/karakeep-backup.json
 stacks/paperless-ngx/backup/tmp
 stacks/syncthing/config
 stacks/homepage/config/logs/homepage.log
+stacks/nginx-proxy-manager/data/
+stacks/nginx-proxy-manager/letsencrypt/
