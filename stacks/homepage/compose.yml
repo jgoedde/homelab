@@ -18,8 +18,8 @@ services:
       - karakeep_default
       - paperless-ngx_default
       - syncthing_default
-      - finances_default
       - metube_default
+      - npm-proxy
 
 networks:
   default: { }
@@ -31,7 +31,7 @@ networks:
     external: true
   syncthing_default:
     external: true
-  finances_default:
-    external: true
   metube_default:
+    external: true
+  npm-proxy:
     external: true

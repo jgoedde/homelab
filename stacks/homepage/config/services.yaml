@@ -89,17 +89,23 @@
         widget:
           type: docker
           container: paperless-ngx-broker-1
-- Money:
+
+- Utilities:
+    - Homepage:
+        icon: homepage.png
+        href: http://hub.fritz.box:9595
+        description: This dashboard
+        widget:
+          type: docker
+          container: homepage
     - Finances:
         icon: mdi-cash-multiple
         href: https://hub.fritz.box:8787
-        siteMonitor: http://finances:8787
+        siteMonitor: http://finances-finances-1
         description: Personal finance tracker
         widget:
           type: docker
           container: finances-finances-1
-
-- Sync:
     - Syncthing:
         icon: syncthing.png
         href: http://hub.fritz.box:8384
@@ -121,27 +127,18 @@
             - field: numFiles
               label: Files
               format: number
-
-- Utilities:
-    - Homepage:
-        icon: homepage.png
-        href: http://hub.fritz.box:9595
-        description: This dashboard
-        widget:
-          type: docker
-          container: homepage
     - NPM:
         icon: sh-nginx-proxy-manager
         href: http://hub.fritz.box:81
         description: Reverse Proxy (NPM)
-        siteMonitor: http://nginx-proxy-manager:81
+        siteMonitor: http://nginx-proxy-manager-app-1
         widget:
           type: npm
-          url: http://nginx-proxy-manager
+          url: http://nginx-proxy-manager-app-1:81
           username: "{{HOMEPAGE_VAR_NPM_ADMIN_USERNAME}}"
           password: "{{HOMEPAGE_VAR_NPM_ADMIN_PASSWORD}}"
     - Fritz:
-        icon: mdi-wifi
+        icon: sh-fritz
         href: http://fritz.box
         description: FRITZ!Box Informationen
         widget:
