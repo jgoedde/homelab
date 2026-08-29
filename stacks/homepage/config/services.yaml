@@ -130,6 +130,16 @@
         widget:
           type: docker
           container: homepage
+    - NPM:
+        icon: sh-nginx-proxy-manager
+        href: http://hub.fritz.box:81
+        description: Reverse Proxy (NPM)
+        siteMonitor: http://nginx-proxy-manager:81
+        widget:
+          type: npm
+          url: http://nginx-proxy-manager
+          username: "{{HOMEPAGE_VAR_NPM_ADMIN_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_NPM_ADMIN_PASSWORD}}"
     - Fritz:
         icon: mdi-wifi
         href: http://fritz.box
