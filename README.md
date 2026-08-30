@@ -39,12 +39,15 @@ as an isolated Docker Compose stack, version-controlled here.
 - [Immich](https://github.com/immich-app/immich), self-hosted photo and video management
 - [Karakeep](https://github.com/karakeep-app/karakeep), formerly Hoarder - bookmarking with AI tagging
 - [Paperless-ngx](https://github.com/paperless-ngx/paperless-ngx), document management
+- [Nginx Proxy Manager](https://nginxproxymanager.com/), reverse proxy with SSL termination. Currently only for the
+  Finances app to enable PWA offline support.
 
 ## Music Management
 
 Started building my own personal music library, getting off streaming services. Built a nice automation (imo) to get
 YouTube Rips - See [music/README](music/README.md). Using [beets](https://beets.io/) to manage the library: auto tag,
-audio fingerprinting, and importing YT rips dropped by MeTube.
+audio fingerprinting, and importing YT rips dropped by MeTube. There is a small Flask app to serve some library stats
+via a REST API, which is consumed by the Homepage dashboard.
 
 ## Backups
 
