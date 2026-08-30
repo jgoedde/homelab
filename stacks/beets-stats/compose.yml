@@ -1,0 +1,9 @@
+services:
+  beets-stats:
+    build: .
+    restart: unless-stopped
+    container_name: "beets-stats"
+    ports:
+      - "127.0.0.1:5050:5050"
+    volumes:
+      - /home/julian/Music/beets/library.db:/beets/library.db:ro

@@ -20,6 +20,7 @@ services:
       - syncthing_default
       - metube_default
       - npm-proxy
+      - beets-stats_default
 
 networks:
   default: { }
@@ -34,4 +35,6 @@ networks:
   metube_default:
     external: true
   npm-proxy:
+    external: true
+  beets-stats_default:
     external: true

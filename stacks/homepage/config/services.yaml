@@ -33,6 +33,32 @@
           container: immich_redis
 
 - Music:
+    - Beets Library:
+        icon: sh-beets
+        widget:
+          type: customapi
+          url: http://beets-stats:5050/stats
+          refreshInterval: 60000
+          display: list
+          mappings:
+            - field: totals.albums
+              label: Albums
+            - field: totals.tracks
+              label: Tracks
+            - field: totals.artists
+              label: Artists
+            - field:
+                last_albums:
+                  0: title
+              label: Latest Album
+            - field:
+                last_albums:
+                  0: artist
+              label: Artist
+            - field:
+                last_albums:
+                  0: added
+              label: Added
     - Metube:
         icon: metube.png
         href: http://hub.fritz.box:8081
