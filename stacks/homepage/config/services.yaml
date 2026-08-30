@@ -127,11 +127,11 @@
     - Finances:
         icon: mdi-cash-multiple
         href: https://hub.fritz.box:8787
-        siteMonitor: http://finances-finances-1
+        siteMonitor: http://finances
         description: Personal finance tracker
         widget:
           type: docker
-          container: finances-finances-1
+          container: finances
     - Syncthing:
         icon: syncthing.png
         href: http://hub.fritz.box:8384
