@@ -10,11 +10,6 @@
         "key": "ModifyChapters",
         "remove_sponsor_segments": ["music_offtopic"]
       },
-      {
-        "key": "FFmpegExtractAudio",
-        "preferredcodec": "aac",
-        "preferredquality": "0"
-      },
       { "key": "EmbedThumbnail" },
       { "key": "FFmpegMetadata", "add_metadata": true }
     ]
