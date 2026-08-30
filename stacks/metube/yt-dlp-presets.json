@@ -2,6 +2,8 @@
   "aac-best": {
     "format": "bestaudio[acodec^=mp4a]/bestaudio[ext=m4a]",
     "writethumbnail": true,
+    "embed-thumbnail": true,
+    "embedthumbnail": true,
     "postprocessors": [
       { "key": "SponsorBlock", "categories": ["music_offtopic"] },
       {
