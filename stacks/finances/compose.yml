@@ -1,6 +1,6 @@
 services:
   finances:
-    image: ghcr.io/jgoedde/finances:1.14.3
+    image: ghcr.io/jgoedde/finances:1.14.4
     restart: unless-stopped
     container_name: finances
     networks:
