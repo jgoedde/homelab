@@ -1,14 +1,12 @@
-## My Homelab setup
+<h1>My Homelab setup</h1>
 
 My personal Infra hosting some l33t services. Personal infrastructure running on a ThinkPad, LAN-only. Each service runs
 as an isolated Docker Compose stack, version-controlled here.
 
-## Contents
+<h2>Contents</h2>
 
 <!-- TOC -->
 
-* [My Homelab setup](#my-homelab-setup)
-* [Contents](#contents)
 * [Architecture](#architecture)
 * [Services & Technologies used](#services--technologies-used)
 * [Music Management](#music-management)
