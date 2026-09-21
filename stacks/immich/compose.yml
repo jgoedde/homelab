@@ -1,5 +1,5 @@
 #
-# WARNING: To install Immich, follow our guide: https://immich.app/docs/install/docker-compose
+# WARNING: To install Immich, follow our guide: https://docs.immich.app/install/docker-compose
 #
 # Make sure to use the docker-compose.yml of the current release:
 #
@@ -36,7 +36,7 @@ services:
     # For hardware acceleration, add one of -[armnn, cuda, rocm, openvino, rknn] to the image tag.
     # Example tag: ${IMMICH_VERSION:-release}-cuda
     image: ghcr.io/immich-app/immich-machine-learning:v3.2.2
-    # extends: # uncomment this section for hardware acceleration - see https://immich.app/docs/features/ml-hardware-acceleration
+    # extends: # uncomment this section for hardware acceleration - see https://docs.immich.app/features/ml-hardware-acceleration
     #   file: hwaccel.ml.yml
     #   service: cpu # set to one of [armnn, cuda, rocm, openvino, openvino-wsl, rknn] for accelerated inference - use the `-wsl` version for WSL2 where applicable
     volumes:
@@ -49,9 +49,9 @@ services:
 
   redis:
     container_name: immich_redis
-    image: docker.io/valkey/valkey:9@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9
+    image: docker.io/valkey/valkey:9@sha256:70739f85ad2ee01a726a965584a0f94895f01b0c60b3cc8b0aeef11eaa6888cf
     healthcheck:
-      test: redis-cli ping || exit 1
+      test: redis-cli ping | grep -q PONG || exit 1
     restart: always
 
   database:
