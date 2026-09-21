@@ -1,4 +1,7 @@
 #!/bin/sh
+# Backs up Paperless-ngx export files, .env, and compose.yml to a borg archive.
+# Uses the document exporter recommended by Paperless-ngx to export all documents to a single directory.
+# See https://docs.paperless-ngx.com/administration/
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

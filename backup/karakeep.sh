@@ -1,4 +1,6 @@
 #!/bin/sh
+# Backs up the entire Karakeep app directory, .env, and compose.yml to a borg archive.
+# This includes the Karakeep database and all uploaded files, archives, attachments etc., so it may be a bit larger.
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
