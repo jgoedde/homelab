@@ -49,9 +49,44 @@ via a REST API, which is consumed by the Homepage dashboard.
 
 ## Backups
 
-Currently manual: `stacks/<service>/backup/backup-<service>.sh` dumps each service's database to its data directory.
-Requires manually plugging in an external SSD (cold storage) and running the scripts by hand - see [Roadmap](#roadmap)
-for automating this.
+Manual for now - see [Roadmap](#roadmap) for automating this.
+
+All backups live in a single encrypted [Borg](https://borgbackup.readthedocs.io/) repository on
+an external SSD (cold storage), which needs to be plugged in before running anything below.
+
+**Structure**
+
+- `backup/bootstrap.sh` — shared helpers (logging, root check, repo path/cache config,
+  per-stack pruning). Sourced by the other scripts, not run directly.
+- `backup/<service>.sh` — one script per backed-up service (currently `immich.sh`, `karakeep.sh`,
+  `paperless.sh`). Each dumps/exports the service's data as needed, creates a Borg archive
+  containing its data directory plus `.env` and `compose.yml`, and prunes old archives for
+  that service only.
+- `backup/run-backups.sh` — runs all of the above in sequence, prompting once for the Borg
+  passphrase up front (exported into the environment so the individual scripts don't prompt
+  again).
+
+**Running a backup**
+
+```sh
+sudo backup/run-backups.sh
+```
+
+Or run a single service's script directly, e.g. `sudo backup/immich.sh`. If a script requires root, it errors
+out early. It has something to do with the service's data directory being owned by root (e.g. Immich).
+
+**Archive naming & retention**
+
+Archives are named `<service>-<UTC timestamp>` (e.g. `immich-2026-09-21_12-00-00`) inside the
+shared repo, so `borg list` shows every service's history interleaved. Pruning is scoped per
+service (`--glob-archives "<service>-*"`) so one service's backups never affect another's
+retention. Current policy: **keep 4 weekly + 3 monthly archives per service.**
+
+**Restoring**
+
+`borg extract` the relevant archive to get back the service's data directory, `.env`, and
+`compose.yml`. Since paths are stored as archived (absolute), either restore to the same
+location or use `borg extract --strip-components N` to land the files elsewhere.
 
 ## Roadmap
 
