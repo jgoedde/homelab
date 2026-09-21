@@ -2,7 +2,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-. "$SCRIPT_DIR/backup-common.sh"
+. "$SCRIPT_DIR/bootstrap.sh"
 
 require_root
 
@@ -15,8 +15,8 @@ export BORG_PASSPHRASE
 
 log "===== Running all stack backups ====="
 
-"$SCRIPT_DIR/backup-immich.sh"
-"$SCRIPT_DIR/backup-karakeep.sh"
-"$SCRIPT_DIR/backup-paperless.sh"
+"$SCRIPT_DIR/immich.sh"
+"$SCRIPT_DIR/karakeep.sh"
+"$SCRIPT_DIR/paperless.sh"
 
 log "===== All stack backups complete ====="
