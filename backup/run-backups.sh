@@ -15,8 +15,8 @@ export BORG_PASSPHRASE
 
 log "===== Running all stack backups ====="
 
-"$SCRIPT_DIR/immich/backup/backup-immich.sh"
-"$SCRIPT_DIR/karakeep/backup/backup-karakeep.sh"
-"$SCRIPT_DIR/paperless-ngx/backup/backup-paperless.sh"
+"$SCRIPT_DIR/backup-immich.sh"
+"$SCRIPT_DIR/backup-karakeep.sh"
+"$SCRIPT_DIR/backup-paperless.sh"
 
 log "===== All stack backups complete ====="

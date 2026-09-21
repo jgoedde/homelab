@@ -2,7 +2,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-. "$SCRIPT_DIR/../../backup-common.sh"
+. "$SCRIPT_DIR/backup-common.sh"
 
 require_root
 
