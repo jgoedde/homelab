@@ -49,7 +49,7 @@ via a REST API, which is consumed by the Homepage dashboard.
 
 ## Backups
 
-Manual for now - see [Roadmap](#roadmap) for automating this.
+Backups are in a hybrid state. There are helpful wrapper scripts, but still need manual execution.
 
 All backups live in a single encrypted [Borg](https://borgbackup.readthedocs.io/) repository on
 an external SSD (cold storage), which needs to be plugged in before running anything below.
@@ -94,5 +94,6 @@ location or use `borg extract --strip-components N` to land the files elsewhere.
 - [X] Add dashboard
 - [X] [Add automatic redeploy (#2)](https://github.com/jgoedde/homelab/issues/2)
 - [ ] Music: Get better quality audios
-- [ ] Automate backups (currently manual, cold-storage SSD)
+- [ ] ~~Automate backups (currently manual, cold-storage SSD)~~
+- [X] Improve backup workflow
 - [ ] Add alerting
