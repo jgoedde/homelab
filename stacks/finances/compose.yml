@@ -1,8 +1,11 @@
 services:
   finances:
-    image: ghcr.io/jgoedde/finances:1.14.5
+    image: ghcr.io/jgoedde/finances:1.16.0
     restart: unless-stopped
     container_name: finances
+    volumes:
+      # optional: the in-app "Backup" button writes the database here
+      - /home/julian/Documents/finances-backups:/backups
     networks:
       - npm-proxy
 
