@@ -41,7 +41,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     env_file: .env
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:3.2.1
+    image: ghcr.io/paperless-ngx/paperless-ngx:3.3.0
     restart: unless-stopped
     depends_on:
       - db
