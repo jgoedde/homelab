@@ -18,5 +18,6 @@ log "===== Running all stack backups ====="
 "$SCRIPT_DIR/immich.sh"
 "$SCRIPT_DIR/karakeep.sh"
 "$SCRIPT_DIR/paperless.sh"
+"$SCRIPT_DIR/finances.sh"
 
 log "===== All stack backups complete ====="
