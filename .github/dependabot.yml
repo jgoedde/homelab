@@ -4,6 +4,8 @@ updates:
   - package-ecosystem: "docker-compose"
     directories:
       - "/stacks/*"
+    exclude-paths:
+      - "stacks/beets-stats/**"
     schedule:
       interval: "daily"
     commit-message:
