@@ -13,7 +13,7 @@ services:
   # hub.fritz.box at finances-beta:3000 to use it (back at finances to roll
   # back).
   finances-beta:
-    image: ghcr.io/jgoedde/finances:2.0.0-beta.2
+    image: ghcr.io/jgoedde/finances:2.0.0-beta.4
     restart: unless-stopped
     container_name: finances-beta
     env_file:
