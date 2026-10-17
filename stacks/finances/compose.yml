@@ -9,6 +9,23 @@ services:
     networks:
       - npm-proxy
 
+  # v2 beta: API + client with server-side data. Point the NPM proxy host
+  # hub.fritz.box at finances-beta:3000 to use it (back at finances to roll
+  # back).
+  finances-beta:
+    image: ghcr.io/jgoedde/finances:2.0.0-beta.2
+    restart: unless-stopped
+    container_name: finances-beta
+    env_file:
+      - .env
+    volumes:
+      - finances-beta-data:/data
+    networks:
+      - npm-proxy
+
+volumes:
+  finances-beta-data:
+
 networks:
   npm-proxy:
     external: true
