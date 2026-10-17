@@ -127,7 +127,7 @@
     - Finances:
         icon: mdi-cash-multiple
         href: https://hub.fritz.box:8787
-        siteMonitor: http://finances-beta
+        siteMonitor: http://finances
         description: Personal finance tracker
         widget:
           type: docker
