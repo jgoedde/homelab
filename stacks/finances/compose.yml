@@ -1,6 +1,6 @@
 services:
   finances:
-    image: ghcr.io/jgoedde/finances:2.5.0
+    image: ghcr.io/jgoedde/finances:2.6.0
     restart: unless-stopped
     container_name: finances
     env_file:
