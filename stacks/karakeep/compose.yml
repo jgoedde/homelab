@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/karakeep-app/karakeep:0.34.0
+    image: ghcr.io/karakeep-app/karakeep:0.34.1
     restart: unless-stopped
     volumes:
       # By default, the data is stored in a docker volume called "data".
