@@ -12,3 +12,8 @@ updates:
       prefix: "chore"
     assignees:
       - "jgoedde"
+    groups:
+      immich:
+        patterns:
+          - "immich"
+          - "immich-*"
