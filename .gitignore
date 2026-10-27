@@ -9,3 +9,5 @@ stacks/homepage/config/logs/homepage.log
 stacks/nginx-proxy-manager/data/
 stacks/nginx-proxy-manager/letsencrypt/
 stacks/finances/data/
+
+backup/backup.log*
