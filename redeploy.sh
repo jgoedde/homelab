@@ -30,16 +30,37 @@ if [ -z "$CHANGED_STACKS" ]; then
     exit 0
 fi
 
+FAILED=0
+DEPLOYED=0
+
 for stack in $CHANGED_STACKS; do
     STACK_DIR="stacks/$stack"
     if [ -f "$STACK_DIR/compose.yml" ]; then
         log "Redeploying: $stack"
-        (
+        if (
             cd "$STACK_DIR"
-            docker compose pull
-            docker compose up -d
-        ) || log "FAILED: $stack"
+            docker compose pull && docker compose up -d
+        ); then
+            DEPLOYED=$((DEPLOYED + 1))
+        else
+            log "FAILED: $stack"
+            FAILED=$((FAILED + 1))
+        fi
     fi
 done
+
+# Prune only dangling (untagged) images that no container references.
+# - No `-a`: tagged images (incl. ones for stopped stacks) are never touched.
+# - No volumes/networks/containers: only images.
+# - `until=24h`: skip images created in the last 24h (e.g. in-progress builds).
+# - Skipped if any redeploy failed, so the previous image stays around for rollback.
+# - Prune errors never abort the script.
+if [ "$FAILED" -gt 0 ]; then
+    log "Skipping image prune: $FAILED stack(s) failed."
+elif [ "$DEPLOYED" -gt 0 ]; then
+    log "Pruning dangling images..."
+    docker image prune --force --filter "until=24h" \
+        || log "Image prune failed (ignored)."
+fi
 
 log "Redeploy cycle complete."
