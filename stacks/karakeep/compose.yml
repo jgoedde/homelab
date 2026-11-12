@@ -23,7 +23,7 @@ services:
         condition: service_healthy
 
   cookie-sync:
-    image: alpine:3.24.3
+    image: alpine:3.24.4
     restart: unless-stopped
     entrypoint: ["/bin/sh", "-c", "apk add --no-cache jq docker-cli >/dev/null && exec /bin/sh /cookie-sync.sh"]
     volumes:
