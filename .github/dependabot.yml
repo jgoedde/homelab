@@ -12,6 +12,9 @@ updates:
       prefix: "chore"
     assignees:
       - "jgoedde"
+    ignore:
+      # Karakeep pins Meilisearch; major data-format changes need manual migration
+      - dependency-name: "getmeili/meilisearch"
     groups:
       immich:
         patterns:
