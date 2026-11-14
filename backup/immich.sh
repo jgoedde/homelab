@@ -12,7 +12,7 @@ require_root
 STACK_DIR="/home/julian/Desktop/homelab/stacks/immich"
 IMMICH_ENV="$STACK_DIR/.env"
 IMMICH_COMPOSE="$STACK_DIR/compose.yml"
-UPLOAD_LOCATION="/srv/secure/immich/library"
+UPLOAD_LOCATION="/home/julian/Documents/immich/library"
 BORG_ARCHIVE_PREFIX="immich"
 
 backup_start "Immich"
