@@ -11,6 +11,7 @@ services:
       - /home/julian/Documents/portfolio-performance:/portfolio-performance
       - /home/julian/Obsidian:/obsidian
       - /home/julian/Music/library:/music-library
+      - /home/julian/Music/focus:/music-focus-library
       - /home/julian/Documents/finanzen:/finanzen
     ports:
       - "127.0.0.1:8384:8384"
