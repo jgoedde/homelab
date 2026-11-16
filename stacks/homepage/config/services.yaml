@@ -1,7 +1,7 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
-- Photos:
+- Main:
     - Immich:
         icon: immich.png
         href: http://hub.fritz.box:2283
@@ -13,62 +13,6 @@
           key: "{{HOMEPAGE_VAR_IMMICH_KEY}}"
           version: 2
           fields: ["photos", "videos", "storage"]
-    - Immich Postgres:
-        icon: postgres.png
-        description: Metadata & search index DB
-        widget:
-          type: docker
-          container: immich_postgres
-    - Immich Machine Learning:
-        icon: immich.png
-        description: Face & object recognition
-        widget:
-          type: docker
-          container: immich_machine_learning
-    - Immich Redis:
-        icon: redis.png
-        description: Job queue cache
-        widget:
-          type: docker
-          container: immich_redis
-
-- Music:
-    - Beets Library:
-        icon: sh-beets
-        widget:
-          type: customapi
-          url: http://beets-stats:5050/stats
-          refreshInterval: 60000
-          display: list
-          mappings:
-            - field: totals.albums
-              label: Albums
-            - field: totals.tracks
-              label: Tracks
-            - field: totals.artists
-              label: Artists
-            - field:
-                last_albums:
-                  0: title
-              label: Latest Album
-            - field:
-                last_albums:
-                  0: artist
-              label: Artist
-            - field:
-                last_albums:
-                  0: added
-              label: Added
-    - Metube:
-        icon: metube.png
-        href: http://hub.fritz.box:8081
-        siteMonitor: http://metube:8081
-        description: yt-dlp download UI
-        widget:
-          type: docker
-          container: metube
-
-- Bookmarks:
     - Karakeep:
         icon: sh-karakeep
         href: http://hub.fritz.box:3030
@@ -79,20 +23,6 @@
           url: http://karakeep-web-1:3000
           key: "{{HOMEPAGE_VAR_KARAKEEP_KEY}}"
           fields: ["bookmarks", "favorites", "tags"]
-    - Karakeep Meilisearch:
-        icon: meilisearch.png
-        description: Bookmark search index
-        widget:
-          type: docker
-          container: karakeep-meilisearch-1
-    - Karakeep Chrome:
-        icon: sh-google-chrome
-        description: Headless crawler
-        widget:
-          type: docker
-          container: karakeep-chrome-1
-
-- Documents:
     - Paperless-ngx:
         icon: paperless-ngx.png
         href: http://hub.fritz.box:8010
@@ -102,21 +32,7 @@
           type: paperlessngx
           url: http://paperless-ngx-webserver-1:8000
           key: "{{HOMEPAGE_VAR_PAPERLESS_KEY}}"
-          fields: ["total"]
-    - Paperless DB:
-        icon: postgres.png
-        description: Document & OCR metadata
-        widget:
-          type: docker
-          container: paperless-ngx-db-1
-    - Paperless Broker:
-        icon: redis.png
-        description: Task queue
-        widget:
-          type: docker
-          container: paperless-ngx-broker-1
-
-- Utilities:
+          fields: [ "total" ]
     - Homepage:
         icon: homepage.png
         href: http://hub.fritz.box:9595
@@ -171,3 +87,39 @@
           type: fritzbox
           url: http://fritz.box
           fields: ["connectionStatus", "uptime", "received", "sent"]
+
+- Music:
+    - Beets Library:
+        icon: sh-beets
+        widget:
+          type: customapi
+          url: http://beets-stats:5050/stats
+          refreshInterval: 60000
+          display: list
+          mappings:
+            - field: totals.albums
+              label: Albums
+            - field: totals.tracks
+              label: Tracks
+            - field: totals.artists
+              label: Artists
+            - field:
+                last_albums:
+                  0: title
+              label: Latest Album
+            - field:
+                last_albums:
+                  0: artist
+              label: Artist
+            - field:
+                last_albums:
+                  0: added
+              label: Added
+    - Metube:
+        icon: metube.png
+        href: http://hub.fritz.box:8081
+        siteMonitor: http://metube:8081
+        description: yt-dlp download UI
+        widget:
+          type: docker
+          container: metube

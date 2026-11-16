@@ -4,21 +4,12 @@ color: slate
 statusStyle: dot
 
 layout:
-  Photos:
+  Main:
     style: row
     columns: 4
   Music:
     style: row
     columns: 4
-  Bookmarks:
-    style: row
-    columns: 4
-  Documents:
-    style: row
-    columns: 4
   Sync:
-    style: row
-    columns: 4
-  Utilities:
     style: row
     columns: 4
